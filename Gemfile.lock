@@ -310,7 +310,7 @@ DEPENDENCIES
   omniauth-google-oauth2
   omniauth-instagram
   omniauth-twitter
-  pg (~> 0.18)
+  pg
   puma (~> 3.0)
   rails (~> 5.0.2)
   sass-rails (~> 5.0)
@@ -324,4 +324,4 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 BUNDLED WITH
-   1.14.6
+   1.15.1
