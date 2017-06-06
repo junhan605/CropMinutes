@@ -23,10 +23,12 @@ class UsersController < ApplicationController
     end
   end
 
-  def show
+  def ushow
+    @user = User.find_by_id(params[:format])
   end
 
   def uedit
+    @user = User.find_by_id(params[:format])
   end
 
   def update
