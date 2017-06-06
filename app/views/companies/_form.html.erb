@@ -23,8 +23,17 @@
     <%= f.email_field :email %>
   </div>
 
+  <div class="field">
+    <%= f.collection_check_boxes :minute_ids, Minute.all, :id, :company_type, label: "Minutes" do |m| %>
+      <div class="field">
+        <%= m.check_box %>
+        <%= m.label%>
+      </div>
+    <% end %>
+  </div>
+
   <div class="actions col-sm-offset-1" align="left">
-    <%= f.submit class: "btn btn-primary", value: "CREATE COMPANY >>" %>
+    <%= f.submit class: "btn btn-primary" %>
   </div>
 
 <% end %>
