@@ -1,0 +1,103 @@
+                               Prefix Verb     URI Pattern                                  Controller#Action
+                            users_new GET      /users/new(.:format)                         users#new
+                          users_ushow GET      /users/ushow(.:format)                       users#ushow
+                         users_create POST     /users/create(.:format)                      users#create
+                          users_uedit GET      /users/uedit(.:format)                       users#uedit
+                         users_update PUT      /users/update(.:format)                      users#update
+                                      PATCH    /users/update(.:format)                      users#update
+                       users_udestroy DELETE   /users/udestroy(.:format)                    users#udestroy
+                        users_suspend POST     /users/suspend(.:format)                     users#suspend
+                         users_active POST     /users/active(.:format)                      users#active
+                                users GET      /users(.:format)                             users#index
+                                 user GET      /user(.:format)                              users#show
+                    new_admin_session GET      /admins/sign_in(.:format)                    devise/sessions#new
+                        admin_session POST     /admins/sign_in(.:format)                    devise/sessions#create
+                destroy_admin_session DELETE   /admins/sign_out(.:format)                   devise/sessions#destroy
+                   new_admin_password GET      /admins/password/new(.:format)               devise/passwords#new
+                  edit_admin_password GET      /admins/password/edit(.:format)              devise/passwords#edit
+                       admin_password PATCH    /admins/password(.:format)                   devise/passwords#update
+                                      PUT      /admins/password(.:format)                   devise/passwords#update
+                                      POST     /admins/password(.:format)                   devise/passwords#create
+            cancel_admin_registration GET      /admins/cancel(.:format)                     devise/registrations#cancel
+               new_admin_registration GET      /admins/sign_up(.:format)                    devise/registrations#new
+              edit_admin_registration GET      /admins/edit(.:format)                       devise/registrations#edit
+                   admin_registration PATCH    /admins(.:format)                            devise/registrations#update
+                                      PUT      /admins(.:format)                            devise/registrations#update
+                                      DELETE   /admins(.:format)                            devise/registrations#destroy
+                                      POST     /admins(.:format)                            devise/registrations#create
+                              minutes GET      /minutes(.:format)                           minutes#index
+                                      POST     /minutes(.:format)                           minutes#create
+                           new_minute GET      /minutes/new(.:format)                       minutes#new
+                          edit_minute GET      /minutes/:id/edit(.:format)                  minutes#edit
+                               minute GET      /minutes/:id(.:format)                       minutes#show
+                                      PATCH    /minutes/:id(.:format)                       minutes#update
+                                      PUT      /minutes/:id(.:format)                       minutes#update
+                                      DELETE   /minutes/:id(.:format)                       minutes#destroy
+                            companies GET      /companies(.:format)                         companies#index
+                                      POST     /companies(.:format)                         companies#create
+                          new_company GET      /companies/new(.:format)                     companies#new
+                         edit_company GET      /companies/:id/edit(.:format)                companies#edit
+                              company GET      /companies/:id(.:format)                     companies#show
+                                      PATCH    /companies/:id(.:format)                     companies#update
+                                      PUT      /companies/:id(.:format)                     companies#update
+                                      DELETE   /companies/:id(.:format)                     companies#destroy
+                     new_user_session GET      /users/sign_in(.:format)                     devise/sessions#new
+                         user_session POST     /users/sign_in(.:format)                     devise/sessions#create
+                 destroy_user_session DELETE   /users/sign_out(.:format)                    devise/sessions#destroy
+user_google_oauth2_omniauth_authorize GET|POST /users/auth/google_oauth2(.:format)          my_engine/omniauth_callbacks#passthru
+ user_google_oauth2_omniauth_callback GET|POST /users/auth/google_oauth2/callback(.:format) my_engine/omniauth_callbacks#google_oauth2
+    user_instagram_omniauth_authorize GET|POST /users/auth/instagram(.:format)              my_engine/omniauth_callbacks#passthru
+     user_instagram_omniauth_callback GET|POST /users/auth/instagram/callback(.:format)     my_engine/omniauth_callbacks#instagram
+     user_facebook_omniauth_authorize GET|POST /users/auth/facebook(.:format)               my_engine/omniauth_callbacks#passthru
+      user_facebook_omniauth_callback GET|POST /users/auth/facebook/callback(.:format)      my_engine/omniauth_callbacks#facebook
+      user_twitter_omniauth_authorize GET|POST /users/auth/twitter(.:format)                my_engine/omniauth_callbacks#passthru
+       user_twitter_omniauth_callback GET|POST /users/auth/twitter/callback(.:format)       my_engine/omniauth_callbacks#twitter
+                    new_user_password GET      /users/password/new(.:format)                devise/passwords#new
+                   edit_user_password GET      /users/password/edit(.:format)               devise/passwords#edit
+                        user_password PATCH    /users/password(.:format)                    devise/passwords#update
+                                      PUT      /users/password(.:format)                    devise/passwords#update
+                                      POST     /users/password(.:format)                    devise/passwords#create
+             cancel_user_registration GET      /users/cancel(.:format)                      devise/registrations#cancel
+                new_user_registration GET      /users/sign_up(.:format)                     devise/registrations#new
+               edit_user_registration GET      /users/edit(.:format)                        devise/registrations#edit
+                    user_registration PATCH    /users(.:format)                             devise/registrations#update
+                                      PUT      /users(.:format)                             devise/registrations#update
+                                      DELETE   /users(.:format)                             devise/registrations#destroy
+                                      POST     /users(.:format)                             devise/registrations#create
+                                      GET      /auth/:provider/callback(.:format)           sessions#create
+                        welcome_index GET      /welcome/index(.:format)                     welcome#index
+                     custome_bookings GET      /custome_bookings(.:format)                  custome_bookings#index
+                                      POST     /custome_bookings(.:format)                  custome_bookings#create
+                  new_custome_booking GET      /custome_bookings/new(.:format)              custome_bookings#new
+                 edit_custome_booking GET      /custome_bookings/:id/edit(.:format)         custome_bookings#edit
+                      custome_booking GET      /custome_bookings/:id(.:format)              custome_bookings#show
+                                      PATCH    /custome_bookings/:id(.:format)              custome_bookings#update
+                                      PUT      /custome_bookings/:id(.:format)              custome_bookings#update
+                                      DELETE   /custome_bookings/:id(.:format)              custome_bookings#destroy
+                             bookings GET      /bookings(.:format)                          bookings#index
+                                      POST     /bookings(.:format)                          bookings#create
+                          new_booking GET      /bookings/new(.:format)                      bookings#new
+                         edit_booking GET      /bookings/:id/edit(.:format)                 bookings#edit
+                              booking GET      /bookings/:id(.:format)                      bookings#show
+                                      PATCH    /bookings/:id(.:format)                      bookings#update
+                                      PUT      /bookings/:id(.:format)                      bookings#update
+                                      DELETE   /bookings/:id(.:format)                      bookings#destroy
+                            customers GET      /customers(.:format)                         customers#index
+                                      POST     /customers(.:format)                         customers#create
+                         new_customer GET      /customers/new(.:format)                     customers#new
+                        edit_customer GET      /customers/:id/edit(.:format)                customers#edit
+                             customer GET      /customers/:id(.:format)                     customers#show
+                                      PATCH    /customers/:id(.:format)                     customers#update
+                                      PUT      /customers/:id(.:format)                     customers#update
+                                      DELETE   /customers/:id(.:format)                     customers#destroy
+                             cleaners GET      /cleaners(.:format)                          cleaners#index
+                                      POST     /cleaners(.:format)                          cleaners#create
+                          new_cleaner GET      /cleaners/new(.:format)                      cleaners#new
+                         edit_cleaner GET      /cleaners/:id/edit(.:format)                 cleaners#edit
+                              cleaner GET      /cleaners/:id(.:format)                      cleaners#show
+                                      PATCH    /cleaners/:id(.:format)                      cleaners#update
+                                      PUT      /cleaners/:id(.:format)                      cleaners#update
+                                      DELETE   /cleaners/:id(.:format)                      cleaners#destroy
+                                 root GET      /                                            users#index
+                user_omniauth_upgrade GET      /users/auth/:provider/upgrade(.:format)      omniauth_callbacks#upgrade
+                                      GET      /users/auth/:provider/setup(.:format)        omniauth_callbacks#setup

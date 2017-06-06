@@ -31,16 +31,27 @@ class UsersController < ApplicationController
     @user = User.find_by_id(params[:format])
   end
 
-  def update
-    respond_to do |format|
-      if @user.update(cleaner_params)
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
-        format.json { render :ushow, status: :ok, location: @user }
-      else
-        format.html { render :edit }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
+  def uupdate
+    @user = User.find_by_id(params[:format])
+    user = params[:user]
+    @user.name = user[:name]
+    @user.first_name = user[:first_name]
+    @user.last_name = user[:last_name]
+    @user.email = user[:email]
+    if user[:password] != nil
+      @user.password = user[:password]
+      @user.password_confirmation = user[:password_confirmation]
     end
+
+    @user.companies = user[:company_ids].present? ? Company.where(id: user[:company_ids]) : [ ]
+
+    if @user.save
+      redirect_to users_ushow_path(@user), notice: 'User was successfully updated.'
+    else
+      format.html { render :ushow }
+      format.json { render json: @user.errors, status: :unprocessable_entity }
+    end
+
   end
 
   # DELETE /users/1
@@ -81,6 +92,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :first_name, :last_name, :email, :password, :password_confirmation, :suspend )
+      params.require(:user).permit(:name, :first_name, :last_name, :email, :password, :password_confirmation, :suspend, companies_ids: [])
     end
 end

@@ -33,7 +33,15 @@
         <label class="col-md-2 control-label">
           Suspend:
         </label>
-        <%= @user.suspend %>
+        <%= @user.suspend ? "true" : "false"%>
+
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-2 control-label">
+          Companies:
+          <%= @user.companies.pluck(:name).join(', ') %>
+        </label>
       </div>
     </p>
   </div>
