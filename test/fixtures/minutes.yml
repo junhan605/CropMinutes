@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: 
+  location: MyString
+  secretary: false
+  president: false
+  director: false
+  treasurer: false
+  other_party: MyString
+  escriibe_property: MyString
+
+two:
+  type: 
+  location: MyString
+  secretary: false
+  president: false
+  director: false
+  treasurer: false
+  other_party: MyString
+  escriibe_property: MyString

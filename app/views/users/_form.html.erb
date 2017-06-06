@@ -1,0 +1,45 @@
+<%= bootstrap_form_for(user, url: users_create_path(user), layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-8") do |f| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.text_field :first_name%>
+  </div>
+
+  <div class="field">
+    <%= f.text_field :last_name %>
+  </div>
+
+  <div class="field">
+    <%= f.email_field :email, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+
+  <div class="actions col-sm-offset-1" align="left">
+    <%= f.submit class: "btn btn-primary", value: "CREATE USER >>" %>
+  </div>
+
+<% end %>

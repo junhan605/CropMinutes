@@ -1,0 +1,32 @@
+<div class="panel panel-default">
+
+  <div class="panel-body">
+    <p>
+      
+      <div class="form-group">
+        <label class="col-md-2 control-label">
+          Name:
+        </label>
+        <%= @custome_booking.name %>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-2 control-label">
+          Customer name:
+        </label>
+        <%= @custome_booking.customer.name %>
+      </div>
+
+    </p>
+  </div>
+
+  <div class="panel-footer">
+    <nav aria-label="...">
+      <ul class="pager">
+        <li class="previous"><%= link_to 'Back', custome_bookings_path %></li>
+        <li class="previous"><%= link_to 'Edit', edit_custome_booking_path(@custome_booking) %></li>
+      </ul>
+    </nav>
+  </div>
+
+</div>

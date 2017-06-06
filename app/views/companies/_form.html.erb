@@ -1,0 +1,30 @@
+<%= bootstrap_form_for(company, layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-8") do |f| %>
+  <% if company.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(company.errors.count, "error") %> prohibited this company from being saved:</h2>
+
+      <ul>
+      <% company.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.text_field :no %>
+  </div>
+
+  <div class="field">
+    <%= f.email_field :email %>
+  </div>
+
+  <div class="actions col-sm-offset-1" align="left">
+    <%= f.submit class: "btn btn-primary", value: "CREATE COMPANY >>" %>
+  </div>
+
+<% end %>

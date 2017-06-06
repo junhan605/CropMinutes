@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Users</h1>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <table class="table table-striped table-condensed table-responsive">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Full Name</th>
+          <th>Email</th>
+          <th>Suspend/Active</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% unless @users.empty? %>
+          <% @users.each do |user| %>
+            <tr>
+              <td><%= user.name %></td>
+              <td><%= user.full_name %></td>
+              <td><%= user.email %></td>
+              <td>
+                <%= link_to 'Suspend', users_suspend_path(user), method: :post, data: {confirm: 'Are you sure?'}, class: 'btn btn-danger btn-xs' %>
+                <%= link_to 'Active', users_active_path(user), method: :post, data: { confirm: 'Are you sure?' } , class: "btn btn-info btn-xs"  %>
+              </td>
+              <td>
+                <%= link_to 'Show', users_ushow_path(user), class: 'btn btn-default btn-xs' %>
+                <%= link_to 'Edit', users_uedit_path(user), class: "btn btn-info btn-xs"  %>
+                <%= link_to 'Destroy', users_udestroy_path(user), method: :delete, data: { confirm: 'Are you sure?' } , class: "btn btn-danger btn-xs" %>
+              </td>
+            </tr>
+          <% end %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="panel-footer">
+    <%= link_to('New User', users_new_path, class: "btn btn-success btn-sm") %>
+  </div>
+</div>

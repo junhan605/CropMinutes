@@ -1,0 +1,41 @@
+<div class="panel panel-default">
+  <div class="panel-body">
+    <p>
+      <div class="form-group">
+        <label class="col-md-2 control-label">
+          Name:
+        </label>
+        <%= @company.name %>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-2 control-label">
+          No:
+        </label>
+        <%= @company.no %>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-2 control-label">
+          Email:
+        </label>
+        <%= @company.email %>
+      </div>
+
+    </p>
+  </div>
+
+  <div class="panel-footer">
+    <nav aria-label="...">
+      <ul class="pager">
+        <li class="previous">
+          <%= link_to 'Back', companies_path %>
+        </li>
+
+        <li class="previous">
+          <%= link_to 'Edit', edit_company_path(@company) %>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
